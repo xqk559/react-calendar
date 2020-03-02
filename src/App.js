@@ -89,6 +89,9 @@ class App extends React.Component {
     }
   }
 
+
+
+
   fizzbuzzMapper = (number) => {
     number = 'nothing';
     return number;
@@ -123,13 +126,17 @@ class App extends React.Component {
     console.log(sortedArray);
   }
 
-
+  stringReverse = (string) => {
+    let newString;
+    newString =  Array.from(string);
+    console.log(newString.reverse())
+  }
 
 
   render() {
     const icon = this.state.muted ? faVolumeMute : faVolumeUp
     const mutedStyle = this.state.muted ? { color: "grey" } : {}
-
+    const string = 'Reverse';
     return (
       <div className="container" onClick={this.hideColorPicker}>
         <div className="App">
@@ -142,7 +149,7 @@ class App extends React.Component {
             firstDayOfWeek={monday}
           />
           <div>
-            {this.fizzbuzz()}
+            {this.stringReverse(string)}
           </div>
           <div className="settings">
             {!this.state.showColorPicker && (
