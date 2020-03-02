@@ -68,7 +68,7 @@ class App extends React.Component {
     }
 
     localStorage.setItem("selectedDays", serializeDates(selectedDays))
-    this.setState({ selectedDays })
+    this.setState({ selectedDays }, ()=>console.log(day))
   }
 
   toggleMute() {
@@ -148,9 +148,6 @@ class App extends React.Component {
             }}
             firstDayOfWeek={monday}
           />
-          <div>
-            {this.stringReverse(string)}
-          </div>
           <div className="settings">
             {!this.state.showColorPicker && (
               <button
